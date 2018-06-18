@@ -27,10 +27,22 @@
   }
 
   function next() {
+    if (card.className === "open") {
+      card.addEventListener('transitionend', setCard);
+      flip();
+    } else {
+      setCard();
+    }
+  }
+
+  function setCard() {
     var num = Math.floor(Math.random() * words.length);
     cardFront.innerHTML = words[num]['en'];
     cardBack.innerHTML = words[num]['ja'];
+    card.removeEventListener('transitionend', setCard);
   }
+
+
 
   next();
 
