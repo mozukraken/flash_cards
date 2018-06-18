@@ -44,3 +44,6 @@ body {
   background: #00aaff;
   transform: rotateY(180deg);
 }
+.open {
+  transform: rotateY(180deg);
+}
