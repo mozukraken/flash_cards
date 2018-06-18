@@ -42,8 +42,14 @@
     card.removeEventListener('transitionend', setCard);
   }
 
+  setCard();
 
-
-  next();
+  window.addEventListener('keyup', function(e) {
+    if (e.keyCode === 70) {
+      flip();
+    } else if (e.keyCode === 78) {
+      next();
+    }
+  });
 
 })();
